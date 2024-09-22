@@ -33,7 +33,7 @@ public class UserController {
         if(result != null) {
             //jsp 상태관리(트래킹 매커니즘) - request (포워드되는 페이지까지만), session(모든 페이지)
             session.setAttribute("loginUser", result);
-            return "redirect:/board/list.multicampus";
+            return "landing";
         } else {
             return "redirect:/";
         }
