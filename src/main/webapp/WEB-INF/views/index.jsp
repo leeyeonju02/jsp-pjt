@@ -66,6 +66,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             />
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
+          ${loginFail}
           <div class="row">
             <div class="col-xs-8">
               <div class="checkbox icheck">

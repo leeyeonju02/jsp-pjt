@@ -43,7 +43,11 @@ pageEncoding="UTF-8" %>
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-        <form action="/user/join.hanwha" method="post">
+        <form
+          action="/user/join.multicampus"
+          method="post"
+          enctype="multipart/form-data"
+        >
           <div class="form-group has-feedback">
             <input
               type="text"
@@ -54,6 +58,7 @@ pageEncoding="UTF-8" %>
             <span
               class="glyphicon glyphicon-envelope form-control-feedback"
             ></span>
+            ${errMap.id}
           </div>
           <div class="form-group has-feedback">
             <input
@@ -63,6 +68,7 @@ pageEncoding="UTF-8" %>
               placeholder="Password"
             />
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            ${errMap.pwd}
           </div>
           <div class="form-group has-feedback">
             <input
@@ -72,6 +78,18 @@ pageEncoding="UTF-8" %>
               placeholder="Name"
             />
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            ${errMap.name}
+          </div>
+          <!-- img upload -->
+          <div class="form-group has-feedback">
+            <input
+              type="file"
+              name="file"
+              class="form-control"
+              placeholder="Image upload"
+            />
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            ${errMap.name}
           </div>
           <div class="row">
             <div class="col-xs-8">

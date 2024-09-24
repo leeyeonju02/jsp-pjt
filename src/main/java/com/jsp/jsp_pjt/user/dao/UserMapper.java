@@ -10,4 +10,6 @@ public interface UserMapper {
     
 
     public UserResponseDTO loginRow(UserRequestDTO params);
+
+    public void joinRow(UserRequestDTO params);
 }
