@@ -391,7 +391,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                       </div>
                       <div class="pull-right">
                         <a
-                          href="/user/logout.sinc"
+                          href="/user/logout.multicampus"
                           class="btn btn-default btn-flat"
                           >Sign out</a
                         >

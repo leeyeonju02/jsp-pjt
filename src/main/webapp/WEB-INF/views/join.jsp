@@ -37,7 +37,7 @@ pageEncoding="UTF-8" %>
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="#"><b>KDT-MULTICAMPUS</b></a>
+        <a href="/"><b>KDT-MULTICAMPUS</b></a>
       </div>
       <!-- /.login-logo -->
       <div class="login-box-body">
@@ -86,10 +86,9 @@ pageEncoding="UTF-8" %>
               type="file"
               name="file"
               class="form-control"
-              placeholder="Image upload"
+              placeholder="Image Upload"
             />
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            ${errMap.name}
           </div>
           <div class="row">
             <div class="col-xs-8">
@@ -139,9 +138,3 @@ pageEncoding="UTF-8" %>
     </script>
   </body>
 </html>
-
-해당 항목을 즐겨찾기로 바꾸기반응 사용자 지정 새 항목 4-수업정보방-공지용에
-메시지 보내기 Shift + Return 키를 눌러 새 행을 추가합니다 프로필 의 프로필 사진
-연락처 정보 이메일 주소 jslim9413@gmail.com 생산성을 높이고 싶으신가요? 사이드바
-구성 내게 리마인더 보내기 오디오 및 비디오 클립 공유 모바일 아이콘 이동 중에도
-[25회차] 채용연계 풀스택 개발자 부트캠프(스프링&리액트)에 대한 연결을 유지하세요

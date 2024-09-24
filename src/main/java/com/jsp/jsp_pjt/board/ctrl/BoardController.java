@@ -34,13 +34,16 @@ public class BoardController {
     }
 
     @GetMapping("/myPage.multicampus")
-    public String getMethodName(@RequestParam String id, Model model) {
+    public String getMethodName(@RequestParam("id") String id, Model model) {
         System.out.println("debug >>. BoardController user endpoint : /board/myPage.multicampus");
-        System.out.println("params = "+id);
+        System.out.println("params = " + id);
+        
         List<UserBoardResponseDTO> result = boardService.history(id);
-        System.out.println("debug >>> result size = "+ result.size());
+        System.out.println("debug >>> result size = " + result.size());
+        
         model.addAttribute("boards", result);
         return "listPage";
     }
+    
     
 }

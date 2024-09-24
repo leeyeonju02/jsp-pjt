@@ -11,11 +11,12 @@
 
     <!-- myhistoryRow -->
 
-    <select id="myhistoryRow" resultType="com.jsp.jsp_pjt.board.domain.UserBoardResponseDTO">
-        SELECT u.id, b.title, b.content, b.regdate, b.viewcnt, b.bno, b.writer
-        FROM project_user_tbl u
-        JOIN project_board_tbl b ON (u.id = b.writer)
-        WHERE u.id = #{id}
-    </select>
+  <select id="myHistoryRow" resultType="com.jsp.jsp_pjt.board.domain.UserBoardResponseDTO">
+    SELECT u.id, b.title, b.content, b.regdate, b.viewcnt, b.bno, b.writer
+    FROM project_user_tbl u
+    JOIN project_board_tbl b ON (u.id = b.writer)
+    WHERE u.id = #{id}
+</select>
+
 
 </mapper>

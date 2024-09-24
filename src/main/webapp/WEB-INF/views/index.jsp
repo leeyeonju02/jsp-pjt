@@ -12,10 +12,14 @@ uri="http://java.sun.com/jsp/jstl/core" %>
       name="viewport"
     />
     <!-- Bootstrap 3.3.4 -->
-    <link
+    <!-- <link
       href="resources/bootstrap/css/bootstrap.min.css"
       rel="stylesheet"
       type="text/css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <!-- Font Awesome Icons -->
     <link
@@ -67,6 +71,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           ${loginFail}
+
           <div class="row">
             <div class="col-xs-8">
               <div class="checkbox icheck">

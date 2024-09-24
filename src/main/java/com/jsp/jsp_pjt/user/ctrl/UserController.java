@@ -1,4 +1,6 @@
 package com.jsp.jsp_pjt.user.ctrl;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -7,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -79,39 +82,35 @@ public class UserController {
         return "join";
     }
     
-    @PostMapping("/join.multicampus")
-    public String join(@Valid UserRequestDTO params, BindingResult bindResult, Model model, MultipartFile file) {
-        System.out.println("debug >>> UserController user endpoint post : /user/join.multicampus");
-        if(bindResult.hasErrors()){
-            System.out.println("debug >>> valid has errors");
-            List<ObjectError> list = bindResult.getAllErrors();
-            Map<String, String> map = new HashMap<>();
-            for(int idx = 0; idx < list.size(); idx++){
-                FieldError field = (FieldError)list.get(idx);
-                String key = field.getField();
-                String msg = field.getDefaultMessage();
-                System.out.println(key +"\t"+msg);
-                map.put(key, msg);
-                // model.addAttribute(key, msg);
-            }
-            model.addAttribute("errMap", map);
-            return "join";
-        } else {
-            System.out.println("debug >>> 유효성 검증 통과");
-            // 비밀번호 암호화
-            System.out.println("debug >>> 암호화 객체 = " +passwordEncoder);
-            System.out.println("debug >>> params = "+ params);
-            String encoderPwd = passwordEncoder.encode(params.getPwd());
-            System.out.println("encoderPwd = "+encoderPwd);
-            params.setPwd(encoderPwd);
-            userService.join(params,file);
-
-            return "redirect:/";
-
+   @PostMapping("/join.multicampus")
+public String join(@Valid UserRequestDTO params, BindingResult bindResult, Model model, @RequestParam("file") MultipartFile file) {
+    System.out.println("debug >>> UserController user endpoint post : /user/join.multicampus");
+    if (bindResult.hasErrors()) {
+        System.out.println("debug >>> valid has errors");
+        List<ObjectError> list = bindResult.getAllErrors();
+        Map<String, String> map = new HashMap<>();
+        for (ObjectError error : list) {
+            FieldError field = (FieldError) error;
+            String key = field.getField();
+            String msg = field.getDefaultMessage();
+            System.out.println(key + "\t" + msg);
+            map.put(key, msg);
         }
+        model.addAttribute("errMap", map);
+        return "join";
+    } else {
+        System.out.println("debug >>> 유효성 검증 통과");
+        // 비밀번호 암호화
+        System.out.println("debug >>> 암호화 객체 = " + passwordEncoder);
+        System.out.println("debug >>> params = " + params);
+        String encoderPwd = passwordEncoder.encode(params.getPwd());
+        System.out.println("encoderPwd = " + encoderPwd);
+        params.setPwd(encoderPwd);
+        userService.join(params, file);
+
+        return "redirect:/";
     }
+}
+
     
 }
-     
-     
-    
