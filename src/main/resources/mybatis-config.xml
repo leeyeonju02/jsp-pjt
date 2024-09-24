@@ -5,5 +5,8 @@
     <typeAliases>
         <typeAlias alias="userRequestDTO" type="com.jsp.jsp_pjt.user.domain.UserRequestDTO" />
         <typeAlias alias="userResponseDTO"  type="com.jsp.jsp_pjt.user.domain.UserResponseDTO" />
+        <!-- board -->
+       <typeAlias alias="boardResponseDTO"  type="com.jsp.jsp_pjt.board.domain.BoardResponseDTO" />
+       <typeAlias alias="userboardResponseDTO"  type="com.jsp.jsp_pjt.board.domain.UserBoardResponseDTO" />
     </typeAliases>
 </configuration>

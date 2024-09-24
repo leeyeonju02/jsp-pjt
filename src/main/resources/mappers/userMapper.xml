@@ -4,7 +4,9 @@
 <mapper namespace="com.jsp.jsp_pjt.user.dao.UserMapper" >
 
 <select id="loginRow" parameterType="userRequestDTO" resultType="userResponseDTO">
-SELECT ID, PWD, NAME, POINT, IMGURL FROM PROJECT_USER_TBL WHERE ID=#{id} AND PWD=#{pwd}
+SELECT ID, PWD, NAME, POINT, IMGURL
+        FROM   PROJECT_USER_TBL
+        WHERE  ID = #{id} and PWD = #{pwd}
 </select>
     
 </mapper>

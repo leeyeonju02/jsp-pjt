@@ -1,6 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8" %> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java"
+         contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@include file="./include/header.jsp"%>
 
@@ -45,15 +47,15 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 						
 						<tbody id="tbody">
 						<!-- 구현 부 -->
-
-							<tr>
-								<td>oooo</td>
-								<td><a  href=''>oooo</a></td>
-								<td>oooo</td>
-								<td>oooo</td>
-								<td><span class="badge bg-red">oooo</span></td>
-							</tr>
-
+							<c:forEach items="${boards}" var="board">
+								<tr>
+									<td>${board.bno}</td>
+									<td><a  href=''>${board.title}</a></td>
+									<td>${board.writer}</td>
+									<td>${board.regdate}</td>
+									<td><span class="badge bg-red">${board.viewcnt}</span></td>
+								</tr>
+							</c:forEach>
 						
 						</tbody>
 					</table>
@@ -84,4 +86,3 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 </script>
-
